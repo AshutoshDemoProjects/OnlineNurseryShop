@@ -1,0 +1,115 @@
+<!--row1-->
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+            <div class="inner">
+                <h3>{{monthOrderCount}}</h3>
+                <p>Orders of This Month</p>
+            </div>
+            <div class="icon">
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <!-- small box -->
+        <div class="small-box bg-maroon">
+            <div class="inner">
+                <h3>{{orderCount}}</h3>
+                <p>Total Order</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+            <div class="inner">
+                <h3>{{plantCount}}</h3>
+                <p>Number of Plants We Have</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <a href="/admin/plant/list" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+            <div class="inner">
+                <h3>{{userCount}}</h3>
+
+                <p>User Registrations</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+</div>
+<!--/row1-->
+<!--row2-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border">
+                <h4 class="box-title">Recap Report</h4>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="text-center">
+                            <strong>{{tableTitle}}</strong>
+                        </p>
+
+                        <div class="box-body">
+                            <div class="chart">
+                                <canvas id="barChart" style="height:230px"></canvas>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- ./box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.col -->
+</div>
+<!--/.row2-->
+<script>
+    $(function () {
+
+        var barChartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            datasets: [{
+                fillColor: "rgba(4, 241, 4, 0.8)",
+                strokeColor: "rgba(168, 0, 81, 0.3)",
+                highlightFill: "rgba(3, 196, 3, 1)",
+                highlightStroke: "rgba(168, 0, 81, 0.7)",
+                data: [{{ monthCount }}]
+        }]
+
+    }
+        var ctx = document.getElementById("barChart").getContext("2d");
+    window.myBar = new Chart(ctx).Bar(barChartData, {
+        responsive: true
+    });
+    });
+</script>

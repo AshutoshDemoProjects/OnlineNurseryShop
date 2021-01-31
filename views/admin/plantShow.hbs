@@ -1,0 +1,166 @@
+<div class="row">
+    <div class="col-md-6">
+        <img style="width:100%; height:100%" src="/public/uploads/{{plant.imagePath}}" alt="{{plant.name}}">
+    </div>
+    <div class="col-md-6">
+        <div class="card" style="width:100%; height:100%">
+            <div class="card-header text-center">
+                <form action="">
+                    <a href="/admin/plant/delete/{{plant._id}}"
+                        onclick="return confirm('Are you sure to delete this record?');"> <button type="button"
+                            class="close">&times;</button></a>
+
+                </form>
+                <h1 class="text-capitalize">
+                    {{plant.name}}
+                </h1>
+                {{plant.shortDescription}}<br>
+                <strong> Price : </strong>&#8377; {{plant.price}}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <div class="h2">Size</div>
+                                </th>
+                                <td class="text-right">
+                                    {{#check plant.size '===' 'sm'}}
+                                    <i class="fas fa-leaf fa-1x text-info"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-1x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.size '===' 'md'}}
+                                    <i class="fas fa-leaf fa-2x text-info"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.size '===' 'lg'}}
+                                    <i class="fas fa-leaf fa-3x text-info"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-3x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.size '===' 'xl'}}
+                                    <i class="fas fa-leaf fa-4x text-info"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-4x text-muted"></i>
+                                    {{/check}}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="h2">DIFFICULTY</div>
+                                </th>
+                                <td class="text-right">
+                                    {{#check plant.difficulty '===' 'lw'}}
+                                    <i class="fas fa-leaf fa-2x text-info"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.difficulty '===' 'md'}}
+                                    <i class="fas fa-leaf fa-2x text-success"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.difficulty '===' 'hg'}}
+                                    <i class="fas fa-leaf fa-2x text-danger"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="h2">LIGHT</div>
+                                </th>
+                                <td class="text-right">
+                                    {{#check plant.light '===' 'lw'}}
+                                    <i class="fas fa-leaf fa-2x text-info"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.light '===' 'md'}}
+                                    <i class="fas fa-leaf fa-2x text-info"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.light '===' 'hg'}}
+                                    <i class="fas fa-leaf fa-2x text-info"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="h2">Petfriendly</div>
+                                </th>
+                                <td class="text-right">
+                                    {{#check plant.petfriendly '===' true}}
+                                    <i class="fas fa-leaf fa-2x text-success"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.petfriendly '===' false}}
+                                    <i class="fas fa-leaf fa-2x text-danger"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="h2">AirCleaner</div>
+                                </th>
+                                <td class="text-right">
+                                    {{#check plant.airCleaner '===' true}}
+                                    <i class="fas fa-leaf fa-2x text-success"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                    {{#check plant.airCleaner '===' false}}
+                                    <i class="fas fa-leaf fa-2x text-danger"></i>
+                                    {{else}}
+                                    <i class="fas fa-leaf fa-2x text-muted"></i>
+                                    {{/check}}
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="/admin/plant/{{plant._id}}" class="btn btn-outline-warning form-control"><i
+                            class="fa fa-edit fa-lg" aria-hidden="true"></i>Edit
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-8">
+        <div class="shadow p-4 mb-4 bg-white">
+            <div class="h3">
+                Full Description
+            </div>
+            <pre style="white-space:pre-wrap;">{{plant.fullDescription}}</pre>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>

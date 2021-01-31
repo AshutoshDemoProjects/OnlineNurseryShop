@@ -1,0 +1,50 @@
+.thumbnail img{
+  max-height: 300px;
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+}
+.price, .caption{
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+header 
+{
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background-image: url(https://i.postimg.cc/tTSXzKN3/banner.jpg);
+  background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+    background-attachment: fixed;
+  text-align: center;
+   }
+
+/*****slogan****/
+.slogan{
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  text-transform: capitalize;
+  font-size: 50px;
+  line-height: 0;
+  left: 145px;
+  top: 140px;
+  right: 100px;
+  color: #fff;
+  width: 1240px;
+  height: auto;
+  position: relative;
+  z-index: 12;
+  margin-bottom: -500px;
+  padding: 60px 40px !important;
+  background-color: rgba(0,0,0,0.5);
+  -webkit-box-shadow:  0px 0px 10px 0px #f5f5f5;
+  box-shadow:  0px 0px 10px 0px #f5f5f5;
+}
+  

@@ -1,0 +1,243 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card border-info mb-3">
+            <div class="card-header bg-transparent border-info">
+                <h3 id="title">{{viewTitle}}</h3>
+            </div>
+            <form action="/admin/plant/add" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <div class="card-body text-success">
+                    <input type="hidden" name="_id" value="{{plant._id}}">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <lable>Name of plant</lable>
+                                <input type="text" class="form-control" name="name" placeholder="Name"
+                                    value="{{plant.name}}">
+                                <div class="text-danger">
+                                    {{plant.nameError}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <lable>Botanical Name</lable>
+                                <input type="text" class="form-control" name="botanicalName"
+                                    placeholder="Botanical Name of plant" value="{{plant.botanicalName}}">
+                                <div class="text-danger">
+                                    {{plant.bNameError}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <lable>Price</lable>
+                                <input type="text" class="form-control" name="price" placeholder="price"
+                                    value="{{plant.price}}">
+                                <div class="text-danger">
+                                    {{plant.priceError}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <lable class="control-lable">Size</lable><br>
+                                {{#check plant.size '===' 'sm'}}
+                                <label for="sm" class="radio-inline">
+                                    <input type="radio" id="sm" name="size" value="sm" checked>Small
+                                </label>
+                                {{else}}
+                                <label for="sm" class="radio-inline">
+                                    <input type="radio" id="sm" name="size" value="sm">Small
+                                </label>
+                                {{/check}}
+                                {{#check plant.size '===' 'md'}}
+                                <label for="md" class="radio-inline">
+                                    <input type="radio" id="md" name="size" value="md" checked>Mediam
+                                </label>
+                                {{else}}
+                                <label for="md" class="radio-inline">
+                                    <input type="radio" id="md" name="size" value="md">Mediam
+                                </label>
+                                {{/check}}
+                                {{#check plant.size '===' 'lg'}}
+                                <label for="lg" class="radio-inline">
+                                    <input type="radio" id="lg" name="size" value="lg" checked>Large
+                                </label>
+                                {{else}}
+                                <label for="lg" class="radio-inline">
+                                    <input type="radio" id="lg" name="size" value="lg">Large
+                                </label>
+                                {{/check}}
+                                {{#check plant.size '===' 'xl'}}
+                                <label for="xl" class="radio-inline">
+                                    <input type="radio" id="xl" name="size" value="xl" checked>Xetra Large
+                                </label>
+                                {{else}}
+                                <label for="xl" class="radio-inline">
+                                    <input type="radio" id="xl" name="size" value="xl">Xetra Large
+                                </label>
+                                {{/check}}
+                                <div class="text-danger">
+                                    {{plant.sizeError}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <lable class="control-lable">DIFFICULTY</lable><br>
+                                {{#check plant.difficulty '===' 'lw'}}
+                                <label for="diffLw" class="radio-inline">
+                                    <input type="radio" id="diffLw" name="difficulty" value="lw" checked>Low
+                                </label>
+                                {{else}}
+                                <label for="diffLw" class="radio-inline">
+                                    <input type="radio" id="diffLw" name="difficulty" value="lw">Low
+                                </label>
+                                {{/check}}
+                                {{#check plant.difficulty '===' 'md'}}
+                                <label for="diffMd" class="radio-inline">
+                                    <input type="radio" id="diffMd" name="difficulty" value="md" checked>Mediam
+                                </label>
+                                {{else}}
+                                <label for="diffMd" class="radio-inline">
+                                    <input type="radio" id="diffMd" name="difficulty" value="md">Mediam
+                                </label>
+                                {{/check}}
+                                {{#check plant.difficulty '===' 'hg'}}
+                                <label for="diffHg" class="radio-inline">
+                                    <input type="radio" id="diffHg" name="difficulty" value="hg" checked>High
+                                </label>
+                                {{else}}
+                                <label for="diffHg" class="radio-inline">
+                                    <input type="radio" id="diffHg" name="difficulty" value="hg">High
+                                </label>
+                                {{/check}}
+                                <div class="text-danger">
+                                    {{plant.diffError}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <lable class="control-lable">LIGHT</lable><br>
+                                {{#check plant.light '===' 'lw'}}
+                                <label for="lightLw" class="radio-inline">
+                                    <input type="radio" id="lightLw" name="light" value="lw" checked>Low
+                                </label>
+                                {{else}}
+                                <label for="lightLw" class="radio-inline">
+                                    <input type="radio" id="lightLw" name="light" value="lw">Low
+                                </label>
+                                {{/check}}
+                                {{#check plant.light '===' 'md'}}
+                                <label for="lightMd" class="radio-inline">
+                                    <input type="radio" id="lightMd" name="light" value="md" checked>Mediam
+                                </label>
+                                {{else}}
+                                <label for="lightMd" class="radio-inline">
+                                    <input type="radio" id="lightMd" name="light" value="md">Mediam
+                                </label>
+                                {{/check}}
+                                {{#check plant.light '===' 'hg'}}
+                                <label for="lightHg" class="radio-inline">
+                                    <input type="radio" id="lightHg" name="light" value="hg" checked>High
+                                </label>
+                                {{else}}
+                                <label for="lightHg" class="radio-inline">
+                                    <input type="radio" id="lightHg" name="light" value="hg">High
+                                </label>
+                                {{/check}}
+                                <div class="text-danger">
+                                    {{plant.lightError}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <lable class="control-lable">Petfriendly</lable><br>
+                                {{#check plant.petfriendly '===' true}}
+                                <label for="PetfriendlyYes" class="radio-inline">
+                                    <input type="radio" id="PetfriendlyYes" name="petfriendly" value="true" checked>Yes
+                                </label>
+                                {{else}}
+                                <label for="PetfriendlyYes" class="radio-inline">
+                                    <input type="radio" id="PetfriendlyYes" name="petfriendly" value="true">Yes
+                                </label>
+                                {{/check}}
+                                {{#check plant.petfriendly '===' false}}
+                                <label for="PetfriendlyNo" class="radio-inline">
+                                    <input type="radio" id="PetfriendlyNo" name="petfriendly" value="false" checked>No
+                                </label>
+                                {{else}}
+                                <label for="PetfriendlyNo" class="radio-inline">
+                                    <input type="radio" id="PetfriendlyNo" name="petfriendly" value="false">No
+                                </label>
+                                {{/check}}
+                                <div class="text-danger">
+                                    {{plant.petfriendlyError}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <lable class="control-lable">AirCleaner</lable><br>
+                                {{#check plant.airCleaner '===' true}}
+                                <label for="airCleanerYes" class="radio-inline">
+                                    <input type="radio" id="airCleanerYes" name="airCleaner" value="true" checked>Yes
+                                </label>
+                                {{else}}
+                                <label for="airCleanerYes" class="radio-inline">
+                                    <input type="radio" id="airCleanerYes" name="airCleaner" value="true">Yes
+                                </label>
+                                {{/check}}
+                                {{#check plant.airCleaner '===' false}}
+                                <label for="airCleanerNo" class="radio-inline">
+                                    <input type="radio" id="airCleanerNo" name="airCleaner" value="false" checked>No
+                                </label>
+                                {{else}}
+                                <label for="airCleanerNo" class="radio-inline">
+                                    <input type="radio" id="airCleanerNo" name="airCleaner" value="false">No
+                                </label>
+                                {{/check}}
+                                <div class="text-danger">
+                                    {{plant.airCleanerError}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <lable>Short Description</lable>
+                        <textarea class="form-control" name="shortDescription"
+                            placeholder="Enter short Description">{{plant.shortDescription}}</textarea>
+                        <div class="text-danger">
+                            {{plant.shortDescError}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <lable>Full Description</lable>
+                        <textarea class="form-control" name="fullDescription" placeholder="Enter full Description"
+                            rows="6">{{plant.fullDescription}}</textarea>
+                        <div class="text-danger">
+                            {{plant.fullDescError}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <lable>Plant Image</lable>
+                        <input type="file" class="form-control-file" name="plant" placeholder="select your plant">
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-info">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

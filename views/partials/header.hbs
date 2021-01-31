@@ -1,0 +1,83 @@
+<div class="slogan">
+  <p>
+    we sell all types of plant
+  </p>
+</div>
+<div class="header">
+  <img src="https://i.postimg.cc/tTSXzKN3/banner.jpg" width=100%;>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <i class="fas fa-leaf"></i>
+  <a class="navbar-brand" href="/">Vrindavan Nursery</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div>
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/shopping-cart/">
+            <i class="fas fa-cart-plus"></i> Shopping Cart
+            <span class="badge">{{session.cart.totalQty}}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/sort">
+            <i class="fas fa-sort-down"></i> Sort
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-users"></i> User Management
+          </a>
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+            {{#if login}}
+            <a class="dropdown-item" href="/user/profile"><i class="fas fa-user"></i> User Account</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/user/logout">Logout</a>
+            {{else}}
+            <a class="dropdown-item" href="/user/signup"><i class="fas fa-user"></i> Sign Up</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/user/signin"><i class="fas fa-user"></i> Sign In</a>
+            {{/if}}
+
+          </div>
+        </li>
+        <form class="form-inline my-2 my-lg-0">
+
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+        </form>
+        <!--<div>
+      {{#if isAdmin }}
+        Admin
+      {{/if}}
+    </div>-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class=></i> Products
+          </a>
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"> Planst</a>
+            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/admin/plant/add"><i class="fas fa-plus-square"></i> Add</a>
+              <a class="dropdown-item" href="/admin/plant/list"><i class="fas fa-list-alt"></i> List</a>
+            </div>
+
+      </ul>
+
+    </div>
+
+</nav>
