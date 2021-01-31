@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 #IMGS
 uploads/
+
+# exception to the rule
+!uploads/.gitkeep 
