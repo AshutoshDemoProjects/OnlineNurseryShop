@@ -25,4 +25,4 @@ yarn-error.log*
 uploads/
 
 # exception to the rule
-!uploads/.gitkeep 
+!uploads/.keep 
